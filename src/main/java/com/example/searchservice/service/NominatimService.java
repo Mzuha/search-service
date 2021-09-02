@@ -15,7 +15,6 @@ public class NominatimService {
 
     public List<PlaceDto> getPlacesByAddress(String address) {
         String request = NOMINATIM_BASE_ENDPOINT + "/search?format=json&q=" + address;
-        System.out.println(request);
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<List<PlaceDto>> placeResponse =
                 restTemplate.exchange(request, HttpMethod.GET, null,
